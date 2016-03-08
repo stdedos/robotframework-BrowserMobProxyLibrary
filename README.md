@@ -8,8 +8,8 @@ simulating network traffic and latency, and rewriting HTTP requests and response
 
 ## Installation
 ### Using pip
-```
-pip install robotframework-browsermoproxyblibrary
+```bash
+      pip install -U robotframework-browsermoproxyblibrary
 ```
 
 ### Manual installation
@@ -19,7 +19,61 @@ pip install robotframework-browsermoproxyblibrary
 3. Extract each source distribution to a temporary location.
 4. Go each created directory from the command line and install each project using:
 
-```
-python setup.py install
+```bash
+      python setup.py install
 ```
 
+## Example
+Install Robot Framework library for selenium
+```bash
+      pip install -U robotframework-selenium2library
+```
+
+Download and extract [BrowserMob Proxy](https://bmp.lightbody.net/)
+
+Basic example:
+```robotframework
+
+      *** Settings ***
+      Documentation               This is just a BrowserMob Proxy Library tutorial
+      ...
+      Metadata                    VERSION     0.1
+      Library                     Selenium2Library
+      Library                     Collections
+      Library                     OperatingSystem
+      Library                     BrowserMobProxyLibrary
+      Suite Setup                 Start Browser
+      Suite Teardown              Close Browsers
+      
+      
+      *** Variables ***
+      ${PAGE_URL}                 https://www.google.com
+      ${BROWSER}                  Firefox
+      
+      *** Keywords ***
+      Start Browser
+          [Documentation]         Start firefox browser
+          Set Selenium Implicit Wait  10
+          ## Init BrowserMob Proxy
+          Start Local Server      <path to browsermob-proxy>
+      
+          ## Create dedicated proxy on BrowserMob Proxy
+          ${BrowserMob_Proxy}=    Create Proxy
+      
+          ## Configure Webdriver to use BrowserMob Proxy
+          Create Webdriver        ${BROWSER}    proxy=${BrowserMob_Proxy}
+      
+      Close Browsers
+          Close All Browsers
+          Stop Local Server
+      
+      *** Test Cases ***
+      Check something
+          [Documentation]         Check the page title
+          New Har                 google
+          Go to                   ${PAGE_URL}
+          Title Should Be         Google
+          ${har}=                 Get Har As JSON
+          create file             ${EXECDIR}${/}file.har     ${har}
+          log to console          Browsermob Proxy HAR file saved as ${EXECDIR}${/}file.har
+```
