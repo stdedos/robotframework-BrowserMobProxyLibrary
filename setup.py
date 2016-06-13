@@ -2,11 +2,9 @@
 
 import sys
 from os.path import join, dirname
+from setuptools import setup
 
 sys.path.append(join(dirname(__file__), 'src'))
-from ez_setup import use_setuptools
-use_setuptools()
-from setuptools import setup
 
 execfile(join(dirname(__file__), 'src', 'BrowserMobProxyLibrary', 'version.py'))
 
@@ -37,9 +35,7 @@ setup(name         = 'robotframework-browsermobproxylibrary',
       install_requires = [
           'robotframework >= 2.6.0',
           'browsermob-proxy >= 0.7.1',
-          'ez_setup >= 0.9'
       ],
-      py_modules  = ['ez_setup'],
       package_dir = {'': 'src'},
       packages    = ['BrowserMobProxyLibrary'],
       )
