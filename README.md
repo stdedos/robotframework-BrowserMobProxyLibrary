@@ -9,7 +9,7 @@ simulating network traffic and latency, and rewriting HTTP requests and response
 ## Installation
 ### Using pip
 ```bash
-      pip install -U robotframework-browsermoproxyblibrary
+      pip install -U robotframework-browsermobproxylibrary
 ```
 
 ### Manual installation
