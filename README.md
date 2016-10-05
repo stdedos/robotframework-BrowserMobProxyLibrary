@@ -6,6 +6,8 @@ BrowserMob Proxy is a simple utility to capture performance data for web apps (v
 as well as manipulate browser behavior and traffic, such as whitelisting and blacklisting content,
 simulating network traffic and latency, and rewriting HTTP requests and responses.
 
+More information about this library can be found in the [Keyword Documentation](https://rawgit.com/s4int/robotframework-BrowserMobProxyLibrary/master/doc/BrowserMobProxyLibrary.html).
+
 ## Installation
 ### Using pip
 ```bash
@@ -15,7 +17,7 @@ simulating network traffic and latency, and rewriting HTTP requests and response
 ### Manual installation
 1. Make sure you have [Robot Framework installed](http://code.google.com/p/robotframework/wiki/Installation).
 2. Download source distributions (`*.tar.gz`) for the library and its dependencies:
-      - https://pypi.python.org/pypi/robotframework-selenium2library
+      - https://pypi.python.org/pypi/robotframework-browsermobproxylibrary
 3. Extract each source distribution to a temporary location.
 4. Go each created directory from the command line and install each project using:
 
