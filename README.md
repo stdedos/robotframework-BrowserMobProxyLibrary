@@ -33,6 +33,8 @@ Install Robot Framework library for selenium
 
 Download and extract [BrowserMob Proxy](https://bmp.lightbody.net/)
 
+Keyword documentation is located [Here](https://rawgit.com/s4int/robotframework-BrowserMobProxyLibrary/master/doc/BrowserMobProxyLibrary.html)
+
 Basic example:
 ```robotframework
 
