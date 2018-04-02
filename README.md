@@ -25,6 +25,10 @@ More information about this library can be found in the [Keyword Documentation](
       python setup.py install
 ```
 
+## Documentation
+
+Robot Framework keyword documentation is located [Here](https://rawgit.com/s4int/robotframework-BrowserMobProxyLibrary/master/doc/BrowserMobProxyLibrary.html)
+
 ## Example
 Install Robot Framework library for selenium
 ```bash
@@ -32,8 +36,6 @@ Install Robot Framework library for selenium
 ```
 
 Download and extract [BrowserMob Proxy](https://bmp.lightbody.net/)
-
-Keyword documentation is located [Here](https://rawgit.com/s4int/robotframework-BrowserMobProxyLibrary/master/doc/BrowserMobProxyLibrary.html)
 
 Basic example:
 ```robotframework
