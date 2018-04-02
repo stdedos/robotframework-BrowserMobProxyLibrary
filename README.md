@@ -29,7 +29,7 @@ More information about this library can be found in the [Keyword Documentation](
 
 Robot Framework keyword documentation is located [Here](https://rawgit.com/s4int/robotframework-BrowserMobProxyLibrary/master/doc/BrowserMobProxyLibrary.html)
 
-### Example
+## Example
 Install Robot Framework library for selenium
 ```bash
       pip install -U robotframework-selenium2library
