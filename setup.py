@@ -17,10 +17,14 @@ if sys.version_info.major >= 3:
 else:
     execfile(filename)
 
+with open(join(CURDIR, 'README.md')) as f:
+    DESCRIPTION = f.read().splitlines()
+
 setup(name         = 'robotframework-browsermobproxylibrary',
       version      = VERSION,
       description  = 'BrowserMob Proxy library for Robot Framework',
       long_description = DESCRIPTION,
+      long_description_content_type='text/x-rst',
       author       = 'Marcin Mierzejewski',
       author_email = '<mmierz@gmail.com>',
       url          = 'https://github.com/s4int/robotframework-BrowserMobProxyLibrary',
