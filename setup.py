@@ -18,7 +18,7 @@ else:
     execfile(filename)
 
 with open(join(CURDIR, 'README.md')) as f:
-    DESCRIPTION = f.read().splitlines()
+    DESCRIPTION = f.read()
 
 setup(name         = 'robotframework-browsermobproxylibrary',
       version      = VERSION,
