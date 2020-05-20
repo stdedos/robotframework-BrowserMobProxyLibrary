@@ -6,7 +6,14 @@ from setuptools import setup
 
 sys.path.append(join(dirname(__file__), 'src'))
 
-execfile(join(dirname(__file__), 'src', 'BrowserMobProxyLibrary', 'version.py'))
+# Is it really not possible with ... ?
+# from BrowserMobProxyLibrary import VERSION
+VERSION_SOURCE = join(dirname(__file__), 'src', 'BrowserMobProxyLibrary', 'version.py')
+if sys.version_info.major >= 3:
+    with open(VERSION_SOURCE, "rb") as source_file:
+        exec(compile(source_file.read(), VERSION_SOURCE, 'exec'))
+else:
+    execfile(VERSION_SOURCE)
 
 DESCRIPTION = """
 BrowserMobProxyLibrary is a Robot Framework library ro interface with BrowserMob Proxy.
@@ -30,7 +37,9 @@ setup(name         = 'robotframework-browsermobproxylibrary',
           "License :: OSI Approved :: Apache Software License",
           "Operating System :: OS Independent",
           "Programming Language :: Python",
-          "Topic :: Software Development :: Testing"
+          "Topic :: Software Development :: Testing",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.6",
       ],
       install_requires = [
           'robotframework >= 2.6.0',

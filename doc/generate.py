@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 from os.path import join, dirname
 try:
     from robot.libdoc import libdoc
