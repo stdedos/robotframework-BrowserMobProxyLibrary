@@ -61,7 +61,7 @@ Basic example:
           [Documentation]         Start firefox browser
           Set Selenium Implicit Wait  10
           ## Init BrowserMob Proxy
-          Start Local Server      <path to browsermob-proxy>
+          Start Local Server      <full path to browsermob-proxy>
       
           ## Create dedicated proxy on BrowserMob Proxy
           ${BrowserMob_Proxy}=    Create Proxy

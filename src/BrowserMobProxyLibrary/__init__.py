@@ -1,6 +1,8 @@
 from browsermobproxy import Server
 from browsermobproxy import RemoteServer
 import json
+
+from .util import modified_environ
 from .version import VERSION
 
 __version__ = VERSION
@@ -58,14 +60,17 @@ class BrowserMobProxyLibrary(object):
         self.client = self.server.create_proxy(params=params)
         return self.client
 
-    def start_local_server(self, path='browsermob-proxy', options={}):
+    def start_local_server(self, executable='browsermob-proxy', options=None, path=''):
         """Start local Browsermob Proxy Server instance
 
-        :param path: Path to the browsermob proxy batch file
-        :param options: Dictionary that can hold the port. \
+        :param executable: Full path to the browsermob proxy batch file
+        :param options: Dictionary that can hold the port.
+        :param path: Prepend directory to path
+        :type path: Union[str, pathlib.Path]
         """
 
-        self.server = Server(path=path, options=options)
+        with modified_environ(PATH=path):
+            self.server = Server(path=executable, options=options)
         self.server.start()
 
     def stop_local_server(self):
