@@ -42,7 +42,6 @@ setup(name         = 'robotframework-browsermobproxylibrary',
           "Programming Language :: Python :: 3.6",
       ],
       install_requires = [
-          'robotframework >= 2.6.0',
           'browsermob-proxy >= 0.7.1',
       ],
       package_dir = {'': 'src'},
